@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MediMate - Smart Medication System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">💊 MediMate</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+            <button onclick="showLogin()">Login</button>
+        </nav>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+
+        <div class="hero-text">
+
+            <h1>
+                Your Smart
+                <span>Medication</span>
+                Companion
+            </h1>
+
+            <p>
+                Manage your medicines, reminders, prescriptions
+                and doctor appointments easily with MediMate.
+            </p>
+
+            <button class="primary-btn" onclick="showLogin()">
+                Get Started
+            </button>
+
+        </div>
+
+        <div class="hero-image">
+            💊
+        </div>
+
+    </section>
+
+
+    <!-- Features -->
+    <section id="features">
+
+        <h2>Our Features</h2>
+
+        <p class="section-description">
+            Everything you need to manage your medication
+            and health reminders.
+        </p>
+
+
+        <div class="feature-container">
+
+            <div class="feature-card">
+                <div>💊</div>
+                <h3>Medicine Management</h3>
+                <p>Add, edit and delete your medicines easily.</p>
+            </div>
+
+
+            <div class="feature-card">
+                <div>⏰</div>
+                <h3>Medicine Reminder</h3>
+                <p>Never forget your medicine with smart reminders.</p>
+            </div>
+
+
+            <div class="feature-card">
+                <div>📋</div>
+                <h3>Prescription</h3>
+                <p>Upload and manage your prescriptions.</p>
+            </div>
+
+
+            <div class="feature-card">
+                <div>👨‍⚕️</div>
+                <h3>Doctor Appointment</h3>
+                <p>Keep track of your upcoming appointments.</p>
+            </div>
+
+
+            <div class="feature-card">
+                <div>📊</div>
+                <h3>Medicine History</h3>
+                <p>Track your taken and missed doses.</p>
+            </div>
+
+
+            <div class="feature-card">
+                <div>🔔</div>
+                <h3>Stock Alert</h3>
+                <p>Get notified when your medicine stock is low.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section id="about" class="about">
+
+        <h2>Why MediMate?</h2>
+
+        <p>
+            MediMate helps users organize their medication,
+            reminders, prescriptions and doctor appointments
+            in one simple platform.
+        </p>
+
+    </section>
+
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close" onclick="closeLogin()">×</span>
+
+            <h2>Welcome to MediMate</h2>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+            >
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter your password"
+            >
+
+            <button class="primary-btn" onclick="login()">
+                Login
+            </button>
+
+            <p id="loginMessage"></p>
+
+        </div>
+
+    </div>
+
+
+    <footer>
+        <p>©️ 2026 MediMate. All Rights Reserved.</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
