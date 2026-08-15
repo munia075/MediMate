@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MediMate - Smart Medication System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <header>
+
+        <div class="logo">
+            💊 MediMate
+        </div>
+
+        <nav id="navbar">
+
+            <a href="#home">Home</a>
+
+            <a href="#features">Features</a>
+
+            <a href="#about">About</a>
+
+            <button onclick="showLogin()">Login</button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- Home -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-text">
+
+            <h1>
+                Your Smart
+                <span>Medication</span>
+                Companion
+            </h1>
+
+            <p>
+                Manage your medicines, reminders, prescriptions
+                and missed doses easily with MediMate.
+            </p>
+
+            <button class="primary-btn" onclick="showRegister()">
+                Get Started
+            </button>
+
+        </div>
+
+
+        <div class="hero-image">
+            💊
+        </div>
+
+    </section>
+
+
+    <!-- Features -->
+
+    <section id="features">
+
+        <h2>Our Features</h2>
+
+        <p class="section-description">
+            Simple tools to manage your daily medication.
+        </p>
+
+
+        <div class="feature-container">
+
+            <div class="feature-card">
+
+                <div>💊</div>
+
+                <h3>Medicine Management</h3>
+
+                <p>
+                    Add, update and delete your medicines easily.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div>⏰</div>
+
+                <h3>Medicine Reminder</h3>
+
+                <p>
+                    Get reminders for your scheduled medicines.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div>❌</div>
+
+                <h3>Missed Dose</h3>
+
+                <p>
+                    Track medicines that you missed taking.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div>📋</div>
+
+                <h3>Prescription</h3>
+
+                <p>
+                    Upload and manage your prescriptions.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div>📊</div>
+
+                <h3>Dashboard</h3>
+
+                <p>
+                    See your medication information in one place.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div>👨‍⚕️</div>
+
+                <h3>Admin Panel</h3>
+
+                <p>
+                    Admin can monitor users and medicines.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+
+    <section id="about" class="about">
+
+        <h2>Why MediMate?</h2>
+
+        <p>
+            MediMate is a simple smart medication system that helps
+            users manage medicines, reminders, missed doses and
+            prescriptions in one platform.
+        </p>
+
+    </section>
+
+
+    <!-- Login -->
+
+    <div id="loginModal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close" onclick="closeLogin()">×</span>
+
+            <h2>Welcome Back</h2>
+
+            <input
+                type="email"
+                id="loginEmail"
+                placeholder="Enter your email"
+            >
+
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Enter your password"
+            >
+
+            <button class="primary-btn" onclick="login()">
+                Login
+            </button>
+
+            <p id="loginMessage"></p>
+
+            <p class="switch-text">
+                Don't have an account?
+                <span onclick="switchToRegister()">Register</span>
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Register -->
+
+    <div id="registerModal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close" onclick="closeRegister()">×</span>
+
+            <h2>Create Account</h2>
+
+            <input
+                type="text"
+                id="registerName"
+                placeholder="Enter your name"
+            >
+
+            <input
+                type="email"
+                id="registerEmail"
+                placeholder="Enter your email"
+            >
+
+            <input
+                type="password"
+                id="registerPassword"
+                placeholder="Create password"
+            >
+
+            <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Confirm password"
+            >
+
+            <button class="primary-btn" onclick="register()">
+                Register
+            </button>
+
+            <p id="registerMessage"></p>
+
+            <p class="switch-text">
+                Already have an account?
+                <span onclick="switchToLogin()">Login</span>
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Dashboard -->
+
+    <section id="dashboard" class="dashboard">
+
+        <div class="dashboard-header">
+
+            <div>
+                <h1>Welcome to MediMate 👋</h1>
+
+                <p>
+                    Manage your medication easily.
+                </p>
+            </div>
+
+            <button class="logout-btn" onclick="logout()">
+                Logout
+            </button>
+
+        </div>
+
+
+        <!-- Dashboard Cards -->
+
+        <div class="dashboard-cards">
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    💊
+                </div>
+
+                <h3 id="totalMedicine">
+                    0
+                </h3>
+
+                <p>Total Medicines</p>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    ⏰
+                </div>
+
+                <h3 id="todayMedicine">
+                    0
+                </h3>
+
+                <p>Today's Medicines</p>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    ✅
+                </div>
+
+                <h3 id="takenDose">
+                    0
+                </h3>
+
+                <p>Taken Doses</p>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    ❌
+                </div>
+
+                <h3 id="missedDose">
+                    0
+                </h3>
+
+                <p>Missed Doses</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Add Medicine -->
+
+        <div class="dashboard-section">
+
+            <h2>Add Medicine</h2>
+
+            <div class="medicine-form">
+
+                <input
+                    type="text"
+                    id="medicineName"
+                    placeholder="Medicine Name"
+                >
+
+                <input
+                    type="text"
+                    id="dosage"
+                    placeholder="Dosage (e.g. 500mg)"
+                >
+
+                <input
+                    type="time"
+                    id="medicineTime"
+                >
+
+                <input
+                    type="text"
+                    id="frequency"
+                    placeholder="Frequency (e.g. 2 times)"
+                >
+
+                <input
+                    type="number"
+                    id="stock"
+                    placeholder="Stock Quantity"
+                >
+
+                <button
+                    class="primary-btn"
+                    onclick="addMedicine()"
+                >
+                    Add Medicine
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Medicine List -->
+
+        <div class="dashboard-section">
+
+            <h2>My Medicines</h2>
+
+            <div id="medicineList"></div>
+
+        </div>
+
+
+        <!-- Reminder -->
+
+        <div class="dashboard-section">
+
+            <h2>⏰ Medicine Reminder</h2>
+
+            <div id="reminderList"></div>
+
+        </div>
+
+
+        <!-- Missed Dose -->
+
+        <div class="dashboard-section">
+
+            <h2>❌ Missed Doses</h2>
+
+            <div id="missedList"></div>
+
+        </div>
+
+
+        <!-- Prescription -->
+
+        <div class="dashboard-section">
+
+            <h2>📋 Upload Prescription</h2>
+
+            <div class="upload-box">
+
+                <input
+                    type="file"
+                    id="prescriptionFile"
+                    accept="image/*,.pdf"
+                >
+
+                <button
+                    class="primary-btn"
+                    onclick="uploadPrescription()"
+                >
+                    Upload
+                </button>
+
+            </div>
+
+            <div id="prescriptionList"></div>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- Admin Panel -->
+
+    <section id="adminPanel" class="admin-panel">
+
+        <div class="dashboard-header">
+
+            <div>
+
+                <h1>Admin Panel</h1>
+
+                <p>
+                    MediMate System Management
+                </p>
+
+            </div>
+
+            <button
+                class="logout-btn"
+                onclick="logout()"
+            >
+                Logout
+            </button>
+
+        </div>
+
+
+        <div class="dashboard-cards">
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    👥
+                </div>
+
+                <h3 id="adminUsers">
+                    0
+                </h3>
+
+                <p>Total Users</p>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    💊
+                </div>
+
+                <h3 id="adminMedicines">
+                    0
+                </h3>
+
+                <p>Total Medicines</p>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    📋
+                </div>
+
+                <h3 id="adminPrescriptions">
+                    0
+                </h3>
+
+                <p>Prescriptions</p>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    ❌
+                </div>
+
+                <h3 id="adminMissed">
+                    0
+                </h3>
+
+                <p>Missed Doses</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="dashboard-section">
+
+            <h2>Registered Users</h2>
+
+            <div id="userList"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            ©️ 2026 MediMate. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
