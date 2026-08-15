@@ -15,6 +15,7 @@ body {
 
 header {
     height: 70px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -29,6 +30,7 @@ header {
 .logo {
     font-size: 25px;
     font-weight: bold;
+    color: #123b38;
 }
 
 nav {
@@ -42,15 +44,26 @@ nav a {
     color: #333;
 }
 
+nav a:hover {
+    color: #159a8c;
+}
+
 nav button {
     border: none;
+
     background: #159a8c;
+
     color: white;
 
     padding: 10px 20px;
+
     border-radius: 8px;
 
     cursor: pointer;
+}
+
+nav button:hover {
+    background: #117c71;
 }
 
 
@@ -83,23 +96,26 @@ nav button {
     margin-top: 25px;
 
     font-size: 18px;
+
     line-height: 1.7;
 
     color: #666;
 }
 
 .primary-btn {
-    margin-top: 25px;
+    margin-top: 20px;
 
-    padding: 13px 25px;
+    padding: 12px 24px;
 
     border: none;
+
     border-radius: 8px;
 
     background: #159a8c;
+
     color: white;
 
-    font-size: 16px;
+    font-size: 15px;
 
     cursor: pointer;
 }
@@ -109,7 +125,7 @@ nav button {
 }
 
 
-/* Hero Icon */
+/* Hero Image */
 
 .hero-image {
     width: 300px;
@@ -143,9 +159,9 @@ h2 {
 
 .section-description {
     margin: 15px 0 40px;
+
     color: #666;
 }
-
 
 .feature-container {
     display: grid;
@@ -154,7 +170,6 @@ h2 {
 
     gap: 25px;
 }
-
 
 .feature-card {
     padding: 30px;
@@ -182,6 +197,7 @@ h2 {
 
 .feature-card p {
     color: #666;
+
     line-height: 1.5;
 }
 
@@ -220,12 +236,14 @@ h2 {
 
     align-items: center;
     justify-content: center;
+
+    z-index: 1000;
 }
 
 .modal-content {
     background: white;
 
-    width: 350px;
+    width: 370px;
 
     padding: 35px;
 
@@ -238,7 +256,8 @@ h2 {
 
 .modal-content h2 {
     font-size: 25px;
-    margin-bottom: 25px;
+
+    margin-bottom: 20px;
 }
 
 .modal-content input {
@@ -251,12 +270,19 @@ h2 {
     border: 1px solid #ddd;
 
     border-radius: 7px;
+
+    outline: none;
+}
+
+.modal-content input:focus {
+    border-color: #159a8c;
 }
 
 .close {
     position: absolute;
 
     right: 20px;
+
     top: 10px;
 
     font-size: 28px;
@@ -264,8 +290,327 @@ h2 {
     cursor: pointer;
 }
 
-#loginMessage {
+#loginMessage,
+#registerMessage {
     margin-top: 15px;
+}
+
+.switch-text {
+    margin-top: 18px;
+
+    color: #666;
+}
+
+.switch-text span {
+    color: #159a8c;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* Dashboard */
+
+.dashboard,
+.admin-panel {
+    display: none;
+
+    padding: 50px 8%;
+
+    min-height: 700px;
+}
+
+.dashboard-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+    font-size: 32px;
+}
+
+.dashboard-header p {
+    margin-top: 8px;
+
+    color: #666;
+}
+
+.logout-btn {
+    padding: 11px 22px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #123b38;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+
+/* Dashboard Cards */
+
+.dashboard-cards {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+}
+
+.dashboard-card {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+
+    text-align: center;
+}
+
+.card-icon {
+    font-size: 35px;
+
+    margin-bottom: 10px;
+}
+
+.dashboard-card h3 {
+    font-size: 28px;
+
+    color: #159a8c;
+}
+
+.dashboard-card p {
+    margin-top: 7px;
+
+    color: #666;
+}
+
+
+/* Dashboard Section */
+
+.dashboard-section {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    margin-bottom: 25px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.dashboard-section h2 {
+    font-size: 24px;
+
+    margin-bottom: 20px;
+}
+
+
+/* Medicine Form */
+
+.medicine-form {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+.medicine-form input {
+    padding: 13px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    outline: none;
+}
+
+.medicine-form input:focus {
+    border-color: #159a8c;
+}
+
+.medicine-form button {
+    width: 150px;
+}
+
+
+/* Medicine Item */
+
+.medicine-item {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 18px;
+
+    margin-bottom: 12px;
+
+    background: #f5fbfa;
+
+    border-radius: 10px;
+
+    border-left: 5px solid #159a8c;
+}
+
+.medicine-info h3 {
+    margin-bottom: 7px;
+}
+
+.medicine-info p {
+    color: #666;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+.medicine-buttons button {
+    border: none;
+
+    padding: 8px 12px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    margin-left: 5px;
+}
+
+.edit-btn {
+    background: #e7f5f2;
+    color: #117c71;
+}
+
+.delete-btn {
+    background: #ffe8e8;
+    color: #d33;
+}
+
+.taken-btn {
+    background: #159a8c;
+    color: white;
+}
+
+.missed-btn {
+    background: #ffe8e8;
+    color: #d33;
+}
+
+
+/* Reminder */
+
+.reminder-item {
+    padding: 18px;
+
+    margin-bottom: 12px;
+
+    background: #f5fbfa;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.reminder-item strong {
+    color: #123b38;
+}
+
+.reminder-time {
+    color: #159a8c;
+
+    font-weight: bold;
+}
+
+
+/* Missed Dose */
+
+.missed-item {
+    padding: 18px;
+
+    margin-bottom: 12px;
+
+    background: #fff1f1;
+
+    border-radius: 10px;
+
+    border-left: 5px solid #e74c3c;
+}
+
+.missed-item strong {
+    color: #c0392b;
+}
+
+
+/* Prescription */
+
+.upload-box {
+    display: flex;
+
+    gap: 15px;
+
+    align-items: center;
+}
+
+.upload-box input {
+    padding: 10px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 7px;
+}
+
+.prescription-item {
+    margin-top: 15px;
+
+    padding: 15px;
+
+    background: #f5fbfa;
+
+    border-radius: 8px;
+}
+
+
+/* Admin */
+
+.admin-panel {
+    background: #f5fbfa;
+}
+
+.user-item {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 18px;
+
+    background: #f5fbfa;
+
+    border-radius: 10px;
+
+    margin-bottom: 12px;
 }
 
 
@@ -284,11 +629,40 @@ footer {
 
 /* Responsive */
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
 
     .hero {
         flex-direction: column;
+
         text-align: center;
+    }
+
+    .hero-image {
+        margin-top: 40px;
+    }
+
+    .feature-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 0 5%;
+    }
+
+    nav a {
+        display: none;
+    }
+
+    .hero {
+        padding: 50px 5%;
     }
 
     .hero h1 {
@@ -296,18 +670,37 @@ footer {
     }
 
     .hero-image {
-        margin-top: 40px;
-
         width: 220px;
         height: 220px;
+
+        font-size: 80px;
     }
 
     .feature-container {
         grid-template-columns: 1fr;
     }
 
-    nav a {
-        display: none;
+    .dashboard-cards {
+        grid-template-columns: 1fr;
     }
 
+    .medicine-form {
+        grid-template-columns: 1fr;
+    }
+
+    .medicine-item,
+    .reminder-item,
+    .user-item {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .upload-box {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
 }
